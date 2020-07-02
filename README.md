@@ -17,9 +17,9 @@ roles the Person has.
 not be stored in the DB, just calculated on the fly.
 
 # List of available endpoints
-- /persons
-- /aliases
-- /movies
+- /persons/
+- /aliases/
+- /movies/
 
 # Used libraries/frameworks
 - Django 3.0.8

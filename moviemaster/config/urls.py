@@ -20,17 +20,23 @@ from rest_framework import routers, serializers, viewsets
 from web.models import Person, Alias, Movie
 
 # Serializers define the API representation.
-class PersonSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Person
-        fields = ['last_name', 'first_name']
-
-class AliasSerializer(serializers.HyperlinkedModelSerializer):
+class AliasSerializer(serializers.ModelSerializer):
+    person = serializers.StringRelatedField()
     class Meta:
         model = Alias
         fields = ['alias', 'person']
 
-class MovieSerializer(serializers.HyperlinkedModelSerializer):
+class PersonSerializer(serializers.ModelSerializer):
+    aliases = serializers.StringRelatedField(many=True)
+    movies_as_cast = serializers.StringRelatedField(many=True)
+    movies_as_director = serializers.StringRelatedField(many=True)
+    movies_as_producer = serializers.StringRelatedField(many=True)
+    class Meta:
+        model = Person
+        fields = ['last_name', 'first_name', 'aliases', 'movies_as_cast', 'movies_as_director', 'movies_as_producer']
+
+class MovieSerializer(serializers.ModelSerializer):
+    casting = PersonSerializer(read_only=True, many=True)
     class Meta:
         model = Movie
         fields = ['title', 'release_year', 'casting', 'directors', 'producers']

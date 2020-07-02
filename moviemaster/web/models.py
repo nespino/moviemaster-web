@@ -14,7 +14,7 @@ class Alias(models.Model):
         Person, on_delete=models.CASCADE, related_name='aliases')
 
     def __str__(self):
-        return "{} ({} {})".format(self.alias, self.person.first_name, self.person.last_name)
+        return self.alias
 
     class Meta:
         verbose_name = 'Alias'
