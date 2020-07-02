@@ -30,7 +30,7 @@ not be stored in the DB, just calculated on the fly.
 
 # Extra credit
 1. Project is deployed and running online (AWS, Heroku, cloud servers, own servers…)  
-https://agile-savannah-85176.herokuapp.com/
+https://moviemaster-web.herokuapp.com
 2. User interface to browse items.  
 Browse http://localhost:8000/admin -> admin:12345  
 3. User interface to create/edit/delete items.  
@@ -55,4 +55,4 @@ Docker Compose
 # Run locally
 - Open your browser and go to http://localhost:8000
 
-
+Solved in 8hs 42m.
