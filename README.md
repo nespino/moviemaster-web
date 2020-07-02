@@ -26,10 +26,11 @@ not be stored in the DB, just calculated on the fly.
 - django-redis-cache
 - psycopg2
 - djangorestframework
+- gunicorn
 
 # Extra credit
 1. Project is deployed and running online (AWS, Heroku, cloud servers, own servers…)  
-{To be completed}  
+https://agile-savannah-85176.herokuapp.com/
 2. User interface to browse items.  
 Browse http://localhost:8000/admin -> admin:12345  
 3. User interface to create/edit/delete items.  
@@ -40,7 +41,7 @@ I've chosen django as it is one of my favorites frameworks and it's simple to cr
 Docker and Docker Compose provide simple, maintainable and scalabble containers to keep up all the stack. The application can be easily deployed over Heroku.  
 Redis is used to keep down the server latency and reduce server loads, it works well along with django.  
 I've decided not to improve a frontend with a nice UI as my role will probably be a backender, and Django Admin already offers the app data handling, no need to reinvent the wheel.  
-
+I've chosen gunicorn as it is a simple webserver that fits the small requirements for this application and it supports WSGI, offering scalability on demand.
 
 # Prerequisites:
 Docker Compose
