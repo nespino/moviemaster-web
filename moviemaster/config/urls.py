@@ -47,10 +47,29 @@ class MovieSerializer(serializers.ModelSerializer):
     casting = MoviePersonSerializer(read_only=True, many=True)
     directors = MoviePersonSerializer(read_only=True, many=True)
     producers = MoviePersonSerializer(read_only=True, many=True)
+    roman_release_year = serializers.SerializerMethodField()
     class Meta:
         model = Movie
-        fields = ['title', 'release_year', 'casting', 'directors', 'producers']
+        fields = ['title', 'roman_release_year', 'casting', 'directors', 'producers']
 
+    def int_to_roman(self, input):
+        """ Convert an integer to a Roman numeral. """
+
+        if not isinstance(input, type(1)):
+            raise (TypeError, "expected integer, got %s" % type(input))
+        if not 0 < input < 4000:
+            raise (ValueError, "Argument must be between 1 and 3999")
+        ints = (1000, 900,  500, 400, 100,  90, 50,  40, 10,  9,   5,  4,   1)
+        nums = ('M',  'CM', 'D', 'CD','C', 'XC','L','XL','X','IX','V','IV','I')
+        result = []
+        for i in range(len(ints)):
+            count = int(input / ints[i])
+            result.append(nums[i] * count)
+            input -= ints[i] * count
+        return ''.join(result)
+
+    def get_roman_release_year(self, movie):
+        return self.int_to_roman(movie.release_year)
 
 # ViewSets define the view behavior.
 class PersonViewSet(viewsets.ModelViewSet):
