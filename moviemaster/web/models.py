@@ -14,8 +14,11 @@ class Alias(models.Model):
         Person, on_delete=models.CASCADE, related_name='aliases')
 
     def __str__(self):
-        return "{} '{}' {}".format(self.person.first_name, self.alias, self.person.last_name)
+        return "{} ({} {})".format(self.alias, self.person.first_name, self.person.last_name)
 
+    class Meta:
+        verbose_name = 'Alias'
+        verbose_name_plural = 'Aliases'
 
 class Movie(models.Model):
     title = models.CharField(max_length=100, blank=False)
