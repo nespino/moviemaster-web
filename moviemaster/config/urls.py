@@ -35,8 +35,18 @@ class PersonSerializer(serializers.ModelSerializer):
         model = Person
         fields = ['last_name', 'first_name', 'aliases', 'movies_as_cast', 'movies_as_director', 'movies_as_producer']
 
+
+class MoviePersonSerializer(serializers.ModelSerializer):
+    aliases = serializers.StringRelatedField(many=True)
+    class Meta:
+        model = Person
+        fields = ['last_name', 'first_name', 'aliases']
+
+
 class MovieSerializer(serializers.ModelSerializer):
-    casting = PersonSerializer(read_only=True, many=True)
+    casting = MoviePersonSerializer(read_only=True, many=True)
+    directors = MoviePersonSerializer(read_only=True, many=True)
+    producers = MoviePersonSerializer(read_only=True, many=True)
     class Meta:
         model = Movie
         fields = ['title', 'release_year', 'casting', 'directors', 'producers']
