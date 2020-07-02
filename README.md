@@ -25,18 +25,18 @@ not be stored in the DB, just calculated on the fly.
 - psycopg2
 
 # Extra credit
-1. Project is deployed and running online (AWS, Heroku, cloud servers, own servers…)
-{To be completed}
-2. User interface to browse items.
-Browse http://localhost:8000/admin -> admin:12345
-3. User interface to create/edit/delete items.
-Browse http://localhost:8000/admin -> admin:12345
-4. Justification of chosen libraries/frameworks against other popular choices.
-I love python. 
-I've chosen django as it is one of my favorites frameworks and it's simple to create models and migrations, as well as a rest API. It has lots of libraries to expand funcionality.
-Docker and Docker Compose provide simple, maintainable and scalabble containers to keep up all the stack. The application can be easily deployed over Heroku.
-Redis is used to keep down the server latency and reduce server loads, it works well along with django.
-I've decided not to improve a frontend with a nice UI as my role will probably be a backender, and Django Admin already offers the app data handling, no need to reinvent the wheel.
+1. Project is deployed and running online (AWS, Heroku, cloud servers, own servers…)  
+{To be completed}  
+2. User interface to browse items.  
+Browse http://localhost:8000/admin -> admin:12345  
+3. User interface to create/edit/delete items.  
+Browse http://localhost:8000/admin -> admin:12345  
+4. Justification of chosen libraries/frameworks against other popular choices.  
+I love python.  
+I've chosen django as it is one of my favorites frameworks and it's simple to create models and migrations, as well as a rest API. It has lots of libraries to expand funcionality.  
+Docker and Docker Compose provide simple, maintainable and scalabble containers to keep up all the stack. The application can be easily deployed over Heroku.  
+Redis is used to keep down the server latency and reduce server loads, it works well along with django.  
+I've decided not to improve a frontend with a nice UI as my role will probably be a backender, and Django Admin already offers the app data handling, no need to reinvent the wheel.  
 
 
 # Prerequisites:
