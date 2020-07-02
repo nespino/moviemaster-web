@@ -1,3 +1,4 @@
 /pg-data/
 .env
 *.pyc
+fixtures/
