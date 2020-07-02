@@ -25,6 +25,7 @@ not be stored in the DB, just calculated on the fly.
 - Django 3.0.8
 - django-redis-cache
 - psycopg2
+- djangorestframework
 
 # Extra credit
 1. Project is deployed and running online (AWS, Heroku, cloud servers, own servers…)  
