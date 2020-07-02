@@ -32,9 +32,9 @@ not be stored in the DB, just calculated on the fly.
 1. Project is deployed and running online (AWS, Heroku, cloud servers, own servers…)  
 https://moviemaster-web.herokuapp.com
 2. User interface to browse items.  
-Browse http://localhost:8000/admin -> admin:12345  
+Browse https://moviemaster-web.herokuapp.com/admin -> admin:12345  
 3. User interface to create/edit/delete items.  
-Browse http://localhost:8000/admin -> admin:12345  
+Browse https://moviemaster-web.herokuapp.com/admin -> admin:12345  
 4. Justification of chosen libraries/frameworks against other popular choices.  
 I love python.  
 I've chosen django as it is one of my favorites frameworks and it's simple to create models and migrations, as well as a rest API. It has lots of libraries to expand funcionality.  
