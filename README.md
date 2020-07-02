@@ -45,6 +45,7 @@ Docker Compose
 # Setup
 - Clone moviemaster-web
 - cd moviemaster-web
+- cp .env.dist .env (Any environment specific configuration should be here)
 - docker-compose up -d (Should auto-build and get the web server up)
 
 # Run locally
